@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import {Calendar} from "antd";
 import {IEvent} from "../models/IEvent";
-import {Moment} from "moment";
+import { Dayjs } from "dayjs";
 import {formatDate} from "../utils/date";
 
 interface EventCalendarProps {
@@ -10,7 +10,7 @@ interface EventCalendarProps {
 
 const EventCalendar: FC<EventCalendarProps> = (props) => {
 
-    function dateCellRender(value: Moment) {
+    function dateCellRender(value: Dayjs) {
         const formatedDate = formatDate(value.toDate());
         const currentDayEvents = props.events.filter(ev => ev.date === formatedDate);
         return (

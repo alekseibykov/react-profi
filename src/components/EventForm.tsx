@@ -3,7 +3,7 @@ import {Button, DatePicker, Form, Input, Row, Select} from "antd";
 import {rules} from "../utils/rules";
 import {IUser} from "../models/IUser";
 import {IEvent} from "../models/IEvent";
-import {Moment} from "moment";
+import { Dayjs } from "dayjs";
 import {formatDate} from "../utils/date";
 import {useTypedSelector} from "../hooks/useTypedSelector";
 
@@ -21,7 +21,7 @@ const EventForm: FC<EventFormProps> = (props) => {
     } as IEvent);
     const {user} = useTypedSelector(state => state.auth)
 
-    const selectDate = (date: Moment | null) => {
+    const selectDate = (date: Dayjs | null) => {
         if (date) {
             setEvent({...event, date: formatDate(date.toDate())})
         }
