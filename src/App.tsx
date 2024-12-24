@@ -11,7 +11,7 @@ const App:FC = () => {
 
     useEffect(() => {
         if(localStorage.getItem('auth')) {
-            setUser({username: localStorage.getItem('username' || '')} as IUser)
+            setUser({username: localStorage.getItem('username')} as IUser)
             setIsAuth(true);
         }
     }, [])

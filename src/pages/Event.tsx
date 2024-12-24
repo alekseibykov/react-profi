@@ -3,7 +3,6 @@ import {Button, Layout, Modal, Row} from "antd";
 import EventCalendar from "../components/EventCalendar";
 import EventForm from "../components/EventForm";
 import {useActions} from "../hooks/useActions";
-import {useSelector} from "react-redux";
 import {useTypedSelector} from "../hooks/useTypedSelector";
 import {IEvent} from "../models/IEvent";
 
@@ -35,7 +34,7 @@ const Event: FC = () => {
             </Row>
             <Modal
                 title="Добавить событие"
-                visible={modalVisible}
+                open={modalVisible}
                 footer={null}
                 onCancel={() => setModalVisible(false)}
             >
