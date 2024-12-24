@@ -1,7 +1,7 @@
-const path = require('path');
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+import {resolve as _resolve} from 'path';
+import HtmlWebpackPlugin from "html-webpack-plugin";
 
-module.exports = (env) => {
+export default (env: { mode: any; }) => {
     return {
         mode: env.mode ?? "development",
         entry: './src/index.tsx',
@@ -19,16 +19,16 @@ module.exports = (env) => {
         },
         devtool: 'inline-source-map',
         devServer: {
-            static: './dist',
+            port: 3000,
         },
         plugins: [
             new HtmlWebpackPlugin({
-                template: path.resolve(__dirname, 'public', './index.html'),
+                template: _resolve(__dirname, 'public', './index.html'),
             }),
         ],
         output: {
             filename: '[name].[contenthash].js',
-            path: path.resolve(__dirname, 'dist'),
+            path: _resolve(__dirname, 'dist'),
             clean: true,
         },
         optimization: {
