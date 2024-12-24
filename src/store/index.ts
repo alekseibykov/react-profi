@@ -1,10 +1,18 @@
-import {applyMiddleware, combineReducers, createStore} from "redux";
-import thunk from 'redux-thunk';
-import reducers from './reducers';
+import { configureStore } from '@reduxjs/toolkit'
+import { api } from '../api/apiSlice'
+import authSlice from "./reducers/auth/authSlice";
+import eventSlice from "./reducers/event/eventSlice";
 
-const rootReducer = combineReducers(reducers)
+export const store = configureStore({
+    reducer: {
+        [api.reducerPath]: api.reducer,
+        users: authSlice,
+        events: eventSlice,
+    },
+    middleware: getDefaultMiddleware =>
+        getDefaultMiddleware().concat(api.middleware)
+})
 
-export const store = createStore(rootReducer, applyMiddleware(thunk))
+
 
 export type RootState = ReturnType<typeof store.getState>
-export type AppDispatch = typeof store.dispatch;

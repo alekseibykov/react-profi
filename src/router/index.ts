@@ -4,7 +4,7 @@ import Event from '../pages/Event';
 
 export interface IRoute {
     path: string;
-    component: React.ComponentType;
+    component: React.FC;
     exact?: boolean;
 }
 

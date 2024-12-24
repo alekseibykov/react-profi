@@ -2,11 +2,10 @@ import React, {FC, useEffect} from 'react';
 import AppRouter from "./components/AppRouter";
 import Navbar from "./components/Navbar";
 import {Layout} from "antd";
-import {useActions} from "./hooks/useActions";
 import {IUser} from "./models/IUser";
+import {setIsAuth, setUser} from "./store/reducers/auth/authSlice";
 
 const App:FC = () => {
-    const {setUser, setIsAuth} = useActions();
 
     useEffect(() => {
         if(localStorage.getItem('auth')) {

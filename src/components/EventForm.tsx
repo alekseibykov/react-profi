@@ -19,7 +19,7 @@ const EventForm: FC<EventFormProps> = (props) => {
         description: '',
         guest: ''
     } as IEvent);
-    const {user} = useTypedSelector(state => state.auth)
+    const {user} = useTypedSelector(state => state.users)
 
     const selectDate = (date: Dayjs | null) => {
         if (date) {

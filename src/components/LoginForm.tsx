@@ -1,25 +1,45 @@
 import React, {FC, useState} from 'react';
 import {Button, Form, Input} from "antd";
 import {rules} from "../utils/rules";
+import { useGetUsersQuery } from '../api/apiSlice';
+import {setError, setIsAuth, setUser} from "../store/reducers/auth/authSlice";
 import {useTypedSelector} from "../hooks/useTypedSelector";
-import {useActions} from "../hooks/useActions";
+import {useDispatch} from "react-redux";
 
 const LoginForm: FC = () => {
-    const {error, isLoading} = useTypedSelector(state => state.auth);
+    const {isAuth} = useTypedSelector(state => state.users);
+    const dispatch = useDispatch();
+    const { data: users, isFetching, isSuccess } = useGetUsersQuery({})
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
-    const {login} = useActions()
 
     const submit = () => {
-        login(username, password)
+        try {
+            setTimeout(async () => {
+                const mockUser = users.find((user: { username: string; password: string; }) => user.username === username && user.password === password);
+                if (mockUser) {
+                    localStorage.setItem('auth', 'true');
+                    localStorage.setItem('username', mockUser.username);
+                    dispatch(setUser(mockUser))
+                    dispatch(setIsAuth(true))
+                } else {
+                    dispatch(setError('Некорректный логин или пароль'))
+                }
+
+                console.log(users, isFetching, isSuccess)
+                console.log(isAuth)
+            }, 1000)
+        } catch (e) {
+            setError('Произошла ошибка при логине')
+        }
     }
 
     return (
         <Form
             onFinish={submit}
         >
-            {error && <div style={{color: 'red'}}>
-                {error}
+            {!isSuccess && <div style={{color: 'red'}}>
+                {!isSuccess}
             </div>}
             <Form.Item
                 label="Имя пользователя"
@@ -43,7 +63,7 @@ const LoginForm: FC = () => {
                 />
             </Form.Item>
             <Form.Item>
-                <Button type="primary" htmlType="submit" loading={isLoading}>
+                <Button type="primary" htmlType="submit" loading={isFetching}>
                     Войти
                 </Button>
             </Form.Item>

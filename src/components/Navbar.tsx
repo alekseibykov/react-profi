@@ -1,14 +1,9 @@
 import React, {FC} from 'react';
 import {Layout, Menu, Row} from "antd";
-import {useHistory} from 'react-router-dom';
-import {RouteNames} from "../router";
 import {useTypedSelector} from "../hooks/useTypedSelector";
-import {useActions} from "../hooks/useActions";
 
 const Navbar: FC = () => {
-    const router = useHistory()
-    const {isAuth, user} = useTypedSelector(state => state.auth);
-    const {logout} = useActions()
+    const {isAuth, user} = useTypedSelector(state => state.users);
 
 
     return (
@@ -23,7 +18,6 @@ const Navbar: FC = () => {
                         <Menu theme="dark" mode="horizontal" selectable={false}>
 
                             <Menu.Item
-                                onClick={logout}
                                 key={1}
                             >
                                 Выйти
@@ -33,7 +27,6 @@ const Navbar: FC = () => {
                     :
                     <Menu theme="dark" mode="horizontal" selectable={false}>
                         <Menu.Item
-                            onClick={() => router.push(RouteNames.LOGIN)}
                             key={1}
                         >
                             Логин
