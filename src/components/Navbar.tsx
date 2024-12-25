@@ -1,10 +1,23 @@
 import React, {FC} from 'react';
 import {Layout, Menu, Row} from "antd";
 import {useTypedSelector} from "../hooks/useTypedSelector";
+import {setIsAuth, setUser} from "../store/reducers/auth/authSlice";
+import {IUser} from "../models/IUser";
+import {useDispatch} from "react-redux";
+import {useHistory} from "react-router-dom";
+import {RouteNames} from "../router";
 
 const Navbar: FC = () => {
     const {isAuth, user} = useTypedSelector(state => state.users);
+    const dispatch = useDispatch();
+    const router = useHistory()
 
+    const logout = () => {
+        localStorage.removeItem('auth')
+        localStorage.removeItem('username')
+        dispatch(setUser({} as IUser));
+        dispatch(setIsAuth(false))
+    }
 
     return (
         <Layout.Header>
@@ -18,6 +31,7 @@ const Navbar: FC = () => {
                         <Menu theme="dark" mode="horizontal" selectable={false}>
 
                             <Menu.Item
+                                onClick={logout}
                                 key={1}
                             >
                                 Выйти
@@ -27,6 +41,7 @@ const Navbar: FC = () => {
                     :
                     <Menu theme="dark" mode="horizontal" selectable={false}>
                         <Menu.Item
+                            onClick={() => router.push(RouteNames.LOGIN)}
                             key={1}
                         >
                             Логин

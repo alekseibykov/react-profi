@@ -25,9 +25,6 @@ const LoginForm: FC = () => {
                 } else {
                     dispatch(setError('Некорректный логин или пароль'))
                 }
-
-                console.log(users, isFetching, isSuccess)
-                console.log(isAuth)
             }, 1000)
         } catch (e) {
             setError('Произошла ошибка при логине')
