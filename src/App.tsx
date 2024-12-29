@@ -5,6 +5,7 @@ import {Layout} from "antd";
 import {IUser} from "./models/IUser";
 import {setIsAuth, setUser} from "./store/reducers/auth/authSlice";
 import {useDispatch} from "react-redux";
+import './App.css';
 
 const App:FC = () => {
 

@@ -5,6 +5,7 @@ import { useGetUsersQuery } from '../api/apiSlice';
 import {setError, setIsAuth, setUser} from "../store/reducers/auth/authSlice";
 import {useTypedSelector} from "../hooks/useTypedSelector";
 import {useDispatch} from "react-redux";
+import * as styles from './LoginForm.module.css';
 
 const LoginForm: FC = () => {
     const {isAuth} = useTypedSelector(state => state.users);
@@ -60,7 +61,7 @@ const LoginForm: FC = () => {
                 />
             </Form.Item>
             <Form.Item>
-                <Button type="primary" htmlType="submit" loading={isFetching}>
+                <Button className={styles.button} type="primary" htmlType="submit" loading={isFetching}>
                     Войти
                 </Button>
             </Form.Item>
