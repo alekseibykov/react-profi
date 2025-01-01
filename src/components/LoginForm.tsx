@@ -1,14 +1,12 @@
 import React, {FC, useState} from 'react';
 import {Button, Form, Input} from "antd";
 import {rules} from "../utils/rules";
-import { useGetUsersQuery } from '../api/apiSlice';
+import {useGetUsersQuery} from '../api/apiSlice';
 import {setError, setIsAuth, setUser} from "../store/reducers/auth/authSlice";
-import {useTypedSelector} from "../hooks/useTypedSelector";
 import {useDispatch} from "react-redux";
 import * as styles from './LoginForm.module.css';
 
 const LoginForm: FC = () => {
-    const {isAuth} = useTypedSelector(state => state.users);
     const dispatch = useDispatch();
     const { data: users, isFetching, isSuccess } = useGetUsersQuery({})
     const [username, setUsername] = useState('')

@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_INJECTED_CODE" value="false" />
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="75c9dce4-65a4-4252-b3a7-7c9687bd0f44" name="Changes" comment="update deps WIP">
+    <list default="true" id="75c9dce4-65a4-4252-b3a7-7c9687bd0f44" name="Changes" comment="update webpack config">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/UserService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/UserService.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/LoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoginForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/router/AppRouter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/AppRouter.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +64,7 @@
     "npm.start.executor": "Run",
     "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2024.3.1.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "ts.external.directory.path": "C:\\Users\\user\\Desktop\\Prog\\js\\redux-antd-course\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -80,7 +77,7 @@
       <recent name="C:\Users\user\Desktop\Prog\js\redux-antd-course" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build:prod">
+  <component name="RunManager" selected="npm.start">
     <configuration name="build:dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -120,8 +117,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.build:prod" />
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.build:prod" />
         <item itemvalue="npm.build:dev" />
       </list>
     </recent_temporary>
@@ -151,6 +148,7 @@
       <workItem from="1735209001154" duration="4977000" />
       <workItem from="1735215128419" duration="5206000" />
       <workItem from="1735284725293" duration="2613000" />
+      <workItem from="1735461997331" duration="992000" />
     </task>
     <task id="LOCAL-00001" summary="update react-scripts">
       <option name="closed" value="true" />
@@ -200,7 +198,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735075724526</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="update webpack config">
+      <option name="closed" value="true" />
+      <created>1735462035404</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1735462035404</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,6 +231,7 @@
     <MESSAGE value="change webpack.config to typescript" />
     <MESSAGE value="update deps WIP" />
     <MESSAGE value="add logout" />
-    <option name="LAST_COMMIT_MESSAGE" value="add logout" />
+    <MESSAGE value="update webpack config" />
+    <option name="LAST_COMMIT_MESSAGE" value="update webpack config" />
   </component>
 </project>

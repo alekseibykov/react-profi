@@ -1,5 +1,5 @@
 import {Switch, Route, Redirect} from 'react-router-dom';
-import {privateRoutes, publicRoutes, RouteNames} from "./index";
+import {privateRoutes, RouteNames} from "./index";
 import {useTypedSelector} from "../hooks/useTypedSelector";
 import Login from "../pages/Login";
 
