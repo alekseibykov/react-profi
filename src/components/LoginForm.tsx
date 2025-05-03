@@ -1,16 +1,18 @@
 import React, {FC, useState} from 'react';
-import {Button, Form, Input} from "antd";
+import {Button, Form, Input, Alert} from "antd";
 import {rules} from "../utils/rules";
 import {useGetUsersQuery} from '../api/apiSlice';
 import {setError, setIsAuth, setUser} from "../store/reducers/auth/authSlice";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import * as styles from './LoginForm.module.css';
+import {RootState} from "../store";
 
 const LoginForm: FC = () => {
     const dispatch = useDispatch();
     const { data: users, isFetching, isSuccess } = useGetUsersQuery({})
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+    const { error } = useSelector((state: RootState) => state.users)
 
     const submit = () => {
         try {
@@ -34,6 +36,7 @@ const LoginForm: FC = () => {
         <Form
             onFinish={submit}
         >
+            {error && <Alert message={error} type="error" showIcon style={{ marginBottom: 24 }} />}
             {!isSuccess && <div style={{color: 'red'}}>
                 {!isSuccess}
             </div>}

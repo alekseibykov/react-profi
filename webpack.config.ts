@@ -1,6 +1,7 @@
 import {resolve as _resolve} from 'path';
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 export default (env: { mode: any; }) => {
     const isDev = env.mode === 'development';
@@ -38,7 +39,12 @@ export default (env: { mode: any; }) => {
             new HtmlWebpackPlugin({
                 template: _resolve(__dirname, 'public', './index.html'),
             }),
-            new MiniCssExtractPlugin()
+            new MiniCssExtractPlugin(),
+            new CopyWebpackPlugin({
+                patterns: [
+                    { from: 'public/users.json', to: 'users.json' }
+                ]
+            })
         ],
         output: {
             filename: '[name].[contenthash].js',
@@ -46,9 +52,11 @@ export default (env: { mode: any; }) => {
             clean: true,
         },
         devtool: isDev ? 'inline-source-map' : false,
-        devServer: isDev ? {
-            port: 3000,
+        devServer: {
+            port: 8080,
             historyApiFallback: true,
-        } : undefined,
+            hot: true,
+            open: true
+        },
     }
 };
