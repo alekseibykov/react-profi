@@ -19,6 +19,22 @@ const Navbar: FC = () => {
         dispatch(setIsAuth(false))
     }
 
+    const authItems = [
+        {
+            key: '1',
+            label: 'Выйти',
+            onClick: logout
+        }
+    ];
+
+    const nonAuthItems = [
+        {
+            key: '1',
+            label: 'Логин',
+            onClick: () => router.push(RouteNames.LOGIN)
+        }
+    ];
+
     return (
         <Layout.Header>
             <Row justify="end">
@@ -28,25 +44,10 @@ const Navbar: FC = () => {
                         <div style={{color: 'white'}}>
                             {user.username}
                         </div>
-                        <Menu theme="dark" mode="horizontal" selectable={false}>
-
-                            <Menu.Item
-                                onClick={logout}
-                                key={1}
-                            >
-                                Выйти
-                            </Menu.Item>
-                        </Menu>
+                        <Menu theme="dark" mode="horizontal" selectable={false} items={authItems} />
                     </>
                     :
-                    <Menu theme="dark" mode="horizontal" selectable={false}>
-                        <Menu.Item
-                            onClick={() => router.push(RouteNames.LOGIN)}
-                            key={1}
-                        >
-                            Логин
-                        </Menu.Item>
-                    </Menu>
+                    <Menu theme="dark" mode="horizontal" selectable={false} items={nonAuthItems} />
                 }
             </Row>
         </Layout.Header>

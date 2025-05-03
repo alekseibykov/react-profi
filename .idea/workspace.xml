@@ -10,8 +10,11 @@
   <component name="ChangeListManager">
     <list default="true" id="75c9dce4-65a4-4252-b3a7-7c9687bd0f44" name="Changes" comment="update webpack config">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoginForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/AppRouter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/AppRouter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/setupTests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/setupTests.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/auth/authSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/auth/authSlice.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +53,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
     "last_opened_file_path": "C:/Users/user/Desktop/Prog/js/redux-antd-course/dist",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
@@ -62,6 +66,7 @@
     "npm.build:prod.executor": "Run",
     "npm.eject.executor": "Run",
     "npm.start.executor": "Run",
+    "npm.test.executor": "Run",
     "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "ts.external.directory.path": "C:\\Users\\user\\Desktop\\Prog\\js\\redux-antd-course\\node_modules\\typescript\\lib",
@@ -77,7 +82,7 @@
       <recent name="C:\Users\user\Desktop\Prog\js\redux-antd-course" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="npm.test">
     <configuration name="build:dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -110,13 +115,26 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="test" />
+      </scripts>
+      <node-interpreter value="project" />
+      <package-manager value="npm" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <list>
+      <item itemvalue="npm.test" />
       <item itemvalue="npm.build:dev" />
       <item itemvalue="npm.build:prod" />
       <item itemvalue="npm.start" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.test" />
         <item itemvalue="npm.start" />
         <item itemvalue="npm.build:prod" />
         <item itemvalue="npm.build:dev" />
@@ -126,7 +144,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-WS-243.22562.222" />
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-WS-251.23774.424" />
       </set>
     </attachedChunks>
   </component>
@@ -149,6 +167,8 @@
       <workItem from="1735215128419" duration="5206000" />
       <workItem from="1735284725293" duration="2613000" />
       <workItem from="1735461997331" duration="992000" />
+      <workItem from="1746290911743" duration="22000" />
+      <workItem from="1746290946632" duration="97000" />
     </task>
     <task id="LOCAL-00001" summary="update react-scripts">
       <option name="closed" value="true" />

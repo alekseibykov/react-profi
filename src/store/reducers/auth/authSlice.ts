@@ -16,7 +16,7 @@ const initialState: AuthState = {
 }
 
 const authSlice = createSlice({
-    name: 'todos',
+    name: 'users',
     initialState,
     reducers: {
         setIsAuth(state, action) {
