@@ -3,7 +3,6 @@ import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import EventForm from './EventForm';
-import { IUser } from '../models/IUser';
 
 // Mock dependencies
 jest.mock('../utils/rules', () => ({
