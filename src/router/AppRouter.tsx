@@ -1,5 +1,5 @@
 import {Switch, Route, Redirect} from 'react-router-dom';
-import {privateRoutes, RouteNames} from "./index";
+import {privateRoutes, publicRoutes, RouteNames} from "./index";
 import {useTypedSelector} from "../hooks/useTypedSelector";
 import Login from "../pages/Login";
 
@@ -20,9 +20,13 @@ const AppRouter = () => {
             :
             <Switch>
                 <Route exact path="/" render={() => <Redirect to="/login" />}/>
-                <Route path="/login">
-                    <Login />
-                </Route>
+                {publicRoutes.map(route =>
+                    <Route path={route.path}
+                           exact={route.exact}
+                           component={route.component}
+                           key={route.path}
+                    />
+                )}
             </Switch>
     );
 };

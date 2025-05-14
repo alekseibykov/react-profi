@@ -19,7 +19,14 @@ const Navbar: FC = () => {
         dispatch(setIsAuth(false))
     }
 
+    const formDemoItem = {
+        key: 'form-demo',
+        label: 'Demo Form',
+        onClick: () => router.push(RouteNames.FORM_DEMO)
+    };
+
     const authItems = [
+        formDemoItem,
         {
             key: '1',
             label: 'Выйти',
@@ -28,6 +35,7 @@ const Navbar: FC = () => {
     ];
 
     const nonAuthItems = [
+        formDemoItem,
         {
             key: '1',
             label: 'Логин',

@@ -1,6 +1,7 @@
 import React from "react";
 import Login from "../pages/Login";
 import Event from '../pages/Event';
+import FormDemo from '../pages/FormDemo';
 
 export interface IRoute {
     path: string;
@@ -10,7 +11,8 @@ export interface IRoute {
 
 export enum RouteNames {
     LOGIN = '/login',
-    EVENT = '/'
+    EVENT = '/',
+    FORM_DEMO = '/form-demo'
 }
 
 export const publicRoutes: IRoute[] = [
@@ -18,5 +20,6 @@ export const publicRoutes: IRoute[] = [
 ]
 
 export const privateRoutes: IRoute[] = [
-    {path: RouteNames.EVENT, exact: true, component: Event}
+    {path: RouteNames.EVENT, exact: true, component: Event},
+    {path: RouteNames.FORM_DEMO, exact: true, component: FormDemo}
 ]
